@@ -1,0 +1,319 @@
+:root {
+    --card-height: 300px;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #c2efe4;
+    background-image: url('https://images.pexels.com/photos/413195/pexels-photo-413195.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    font-family: 'Pacifico', cursive;
+}
+
+p{
+    color:black;
+    
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+    align-items: center;
+    list-style: none;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+}
+
+h1 {
+    font-size: 65px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.card p {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Pacifico', cursive;
+    background-color: azure;
+    border-radius: 10px;
+}
+
+.card {
+    perspective: 2500px;
+    margin: 0 50px;
+    width: 7000px;
+}
+
+.divVideos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    max-height: 25rem;
+    min-height: 25rem;
+}
+
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%);
+}
+
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%);
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+    opacity: 1;
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+}
+
+.title {
+    width: 100%;
+    transition: transform 0.5s;
+}
+
+.card:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+}
+
+.card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}
+
+.divContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+    margin-bottom: 30rem;
+}
+
+.imgTomy2 {
+    width: 100%;
+    border-radius: 80px;
+
+}
+
+
+.imgTomy {
+    width: 100%;
+    border-radius: 80px;
+
+    transition: transform .2s;
+
+}
+
+.imgTomy:hover {
+
+    transform: scale(1.2);
+}
+
+figure {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.video {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video div {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+
+iframe {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.videoVacaLola {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.fotosTomy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.figureTomy {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    background-color: white;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+/* css animales   
+
+*/
+
+
+
+.divAnimales {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.divAnimales figure {
+    width: 700px;
+    height: 700px;
+    padding: 15px;
+}
+
+.divAnimales figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width:900px) {
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgb(255, 255, 255);
+        margin-top: 40px;
+        margin-bottom: 20px;
+        list-style: none;
+        font-family: 'Pacifico', cursive;
+        font-size: 10px;
+        padding: 20px;
+       border-radius: 10px;
+    }
+
+    .divVideos {
+        display: flex;
+        flex-direction: row;
+      
+        flex-wrap: wrap;
+    }
+
+
+    .figureTomy {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .divContainer {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+
+    }
+
+    .imgTomy2 {
+        padding: 5px;
+    }
+
+    .card {
+        perspective: 2500px;
+        margin: 0 50px;
+        width: 450px;
+    }
+
+    .wrapper {
+        transition: all 0.5s;
+        width: 100%;
+        z-index: -1;
+        position: relative;
+    }
+
+
+
+    .divAnimales figure {
+        width: 500px;
+        height: 450px;
+        padding: 15px;
+    }
+
+
+    .cover-image {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        border-radius: 20px;
+        min-height: 25rem;
+        max-height: 35rem;
+    }
+
+   
+}
